@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexara Health | Metabolic Boost</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        .hero { 
+            background: linear-gradient(rgba(16, 64, 48, 0.88), rgba(16, 64, 48, 0.88)), 
+                        url('https://picsum.photos/id/1015/1920/800') center/cover; 
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="text-3xl font-bold text-emerald-700">Nexara Health</div>
+            <div class="hidden md:flex space-x-8 text-lg">
+                <a href="#pricing" class="hover:text-emerald-600">Shop</a>
+                <a href="#" class="hover:text-emerald-600">Ingredients</a>
+                <a href="#" class="hover:text-emerald-600">Science</a>
+                <a href="#" class="hover:text-emerald-600">About</a>
+            </div>
+            <div class="text-xl font-medium">Cart (<span id="cart-count">0</span>)</div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero text-white py-28 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Metabolic Boost</h1>
+            <p class="text-2xl mb-8">Premium herbal supplement formulated to support metabolic wellness, healthy glucose metabolism, and sustained energy as part of a balanced lifestyle.</p>
+            <a href="#pricing" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-12 py-5 rounded-full text-xl font-semibold transition">
+                Choose Package
+            </a>
+            <p class="text-sm mt-10 opacity-90">*These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+        </div>
+    </section>
+
+    <!-- Product Image -->
+    <section class="max-w-5xl mx-auto px-6 -mt-10 relative z-10">
+        <div class="bg-white rounded-3xl shadow-2xl p-8">
+            <img src="public/metabolic-boost.png" 
+                 alt="Metabolic Boost Supplement" 
+                 class="w-full max-w-2xl mx-auto rounded-2xl shadow">
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="max-w-7xl mx-auto px-6 py-20">
+        <h2 class="text-4xl font-bold text-center mb-4">Choose Your Package</h2>
+        <p class="text-center text-gray-600 mb-12">60 Vegetarian Capsules per bottle • Professional Grade</p>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+            <!-- 1 Bottle -->
+            <div class="bg-white border border-gray-200 rounded-3xl p-8 text-center hover:shadow-xl transition">
+                <div class="text-emerald-600 font-semibold mb-2">1 BOTTLE</div>
+                <div class="text-5xl font-bold mb-2">$199.99</div>
+                <p class="text-gray-500 mb-8">30–60 day supply</p>
+                <button onclick="addToCart(1)" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl font-semibold text-lg">
+                    Buy 1 Bottle - $199.99
+                </button>
+            </div>
+
+            <!-- 3 Bottles - Most Popular -->
+            <div class="bg-emerald-50 border-2 border-emerald-600 rounded-3xl p-8 text-center relative scale-105">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-sm font-bold px-8 py-1.5 rounded-full">MOST POPULAR</div>
+                <div class="text-emerald-600 font-semibold mb-2">3 BOTTLES</div>
+                <div class="text-5xl font-bold mb-2">$249.99</div>
+                <p class="text-emerald-600 font-medium mb-1">Save over $350</p>
+                <p class="text-gray-500 mb-8">3-month supply</p>
+                <button onclick="addToCart(3)" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl font-semibold text-lg">
+                    Buy 3 Bottles - $249.99
+                </button>
+            </div>
+
+            <!-- 6 Bottles -->
+            <div class="bg-white border border-gray-200 rounded-3xl p-8 text-center hover:shadow-xl transition">
+                <div class="text-emerald-600 font-semibold mb-2">6 BOTTLES</div>
+                <div class="text-5xl font-bold mb-2">$299.99</div>
+                <p class="text-emerald-600 font-medium mb-1">Best Value</p>
+                <p class="text-gray-500 mb-8">6-month supply</p>
+                <button onclick="addToCart(6)" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl font-semibold text-lg">
+                    Buy 6 Bottles - $299.99
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="bg-gray-100 py-16">
+        <div class="max-w-4xl mx-auto px-6 text-center text-sm text-gray-600 leading-relaxed">
+            <p class="font-bold text-base mb-4">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+            <p>Consult your healthcare provider before using this or any supplement, especially if you are pregnant, nursing, taking medication, or have a medical condition.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 text-sm">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p>© 2026 Nexara Health • All Rights Reserved</p>
+            <p class="mt-3">
+                <a href="#" class="hover:text-white mx-3">Privacy</a>
+                <a href="#" class="hover:text-white mx-3">Terms</a>
+                <a href="#" class="hover:text-white mx-3">Shipping & Returns</a>
+            </p>
+            <p class="mt-6 text-xs">support@nexarahealth.store</p>
+        </div>
+    </footer>
+
+    <script>
+        function addToCart(qty) {
+            const prices = {1: 199.99, 3: 249.99, 6: 299.99};
+            alert(`✅ Added ${qty} bottle${qty > 1 ? 's' : ''} package ($${prices[qty]}) to cart!`);
+            // TODO: Replace alert with real checkout (Shopify, Square, Stripe, etc.)
+        }
+    </script>
+</body>
+</html>
