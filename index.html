@@ -1,102 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexara Health | Premium Supplements</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        body { font-family: system-ui, -apple-system, sans-serif; }
-        .hero { 
-            background: linear-gradient(rgba(16, 64, 48, 0.88), rgba(16, 64, 48, 0.88)), 
-                        url('https://picsum.photos/id/1015/1920/800') center/cover; 
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexara Health | Premium Supplements</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body { font-family: system-ui, -apple-system, sans-serif; }
+.hero {
+background: linear-gradient(rgba(16, 64, 48, 0.88), rgba(16, 64, 48, 0.88)),
+url('https://picsum.photos/id/1015/1920/800') center/cover;
+}
+</style>
 </head>
 <body class="bg-gray-50 text-gray-900">
+<!-- Header -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+<nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+<div class="text-3xl font-bold text-emerald-700">Nexara Health</div>
+<div class="hidden md:flex space-x-8 text-lg">
+<a href="#products" class="hover:text-emerald-600">Shop</a>
+<a href="#" class="hover:text-emerald-600">Ingredients</a>
+<a href="#" class="hover:text-emerald-600">Science</a>
+<a href="#" class="hover:text-emerald-600">About</a>
+</div>
+<div class="text-xl font-medium">Cart (<span id="cart-count">0</span>)</div>
+</nav>
+</header>
 
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div class="text-3xl font-bold text-emerald-700">Nexara Health</div>
-            <div class="hidden md:flex space-x-8 text-lg">
-                <a href="#products" class="hover:text-emerald-600">Shop</a>
-                <a href="#" class="hover:text-emerald-600">Ingredients</a>
-                <a href="#" class="hover:text-emerald-600">Science</a>
-                <a href="#" class="hover:text-emerald-600">About</a>
-            </div>
-            <div class="text-xl font-medium">Cart (<span id="cart-count">0</span>)</div>
-        </nav>
-    </header>
+<!-- Hero -->
+<section class="hero text-white py-28 text-center">
+<div class="max-w-4xl mx-auto px-6">
+<h1 class="text-5xl md:text-6xl font-bold mb-6">Premium Metabolic Support</h1>
+<p class="text-2xl mb-8">Berberine 500mg + Metabolic Boost</p>
+<a href="#products" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-12 py-5 rounded-full text-xl font-semibold transition">
+Shop Now
+</a>
+</div>
+</section>
 
-    <!-- Hero -->
-    <section class="hero text-white py-28 text-center">
-        <div class="max-w-4xl mx-auto px-6">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6">Premium Metabolic Support</h1>
-            <p class="text-2xl mb-8">Berberine 500mg + Metabolic Boost</p>
-            <a href="#products" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-12 py-5 rounded-full text-xl font-semibold transition">
-                Shop Now
-            </a>
-        </div>
-    </section>
+<!-- Products Section -->
+<section id="products" class="max-w-7xl mx-auto px-6 py-20">
+<h2 class="text-4xl font-bold text-center mb-16">Our Products</h2>
+<div class="grid md:grid-cols-2 gap-12">
 
-    <!-- Products Section -->
-    <section id="products" class="max-w-7xl mx-auto px-6 py-20">
-        <h2 class="text-4xl font-bold text-center mb-16">Our Products</h2>
+<!-- Metabolic Boost -->
+<div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+<img src="/public/images/1.jpg" alt="Metabolic Boost" class="w-full h-80 object-cover">
+<div class="p-8">
+<h3 class="text-2xl font-bold mb-2">Metabolic Boost</h3>
+<p class="text-gray-600 mb-6">Premium herbal formula for metabolic wellness and energy.</p>
+<a href="#" class="block text-center bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl font-semibold">View Packages →</a>
+</div>
+</div>
 
-        <div class="grid md:grid-cols-2 gap-12">
+<!-- Berberine -->
+<div class="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-emerald-600">
+<img src="/public/images/1.jpg"
+alt="Nexara Health Berberine 500mg"
+class="w-full h-80 object-contain bg-gray-50 p-8">
+<div class="p-8">
+<h3 class="text-2xl font-bold mb-2">Berberine 500mg</h3>
+<p class="text-emerald-600 font-medium mb-1">60 Capsules • Barberry Root Extract</p>
+<p class="text-gray-600 mb-6">Powerful support for healthy blood sugar, metabolism, and digestion.</p>
+<button onclick="addToCart('berberine')"
+class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl font-semibold text-lg">
+Buy Now - $44.99
+</button>
+</div>
+</div>
 
-            <!-- Metabolic Boost -->
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
-                <img src="/images/metabolic-boost.png" alt="Metabolic Boost" class="w-full h-80 object-cover">
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold mb-2">Metabolic Boost</h3>
-                    <p class="text-gray-600 mb-6">Premium herbal formula for metabolic wellness and energy.</p>
-                    <a href="#" class="block text-center bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl font-semibold">View Packages →</a>
-                </div>
-            </div>
+</div>
+</section>
 
-            <!-- Berberine -->
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-emerald-600">
-                <img src="/images/1.jpg" 
-                     alt="Nexara Health Berberine 500mg" 
-                     class="w-full h-80 object-contain bg-gray-50 p-8">
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold mb-2">Berberine 500mg</h3>
-                    <p class="text-emerald-600 font-medium mb-1">60 Capsules • Barberry Root Extract</p>
-                    <p class="text-gray-600 mb-6">Powerful support for healthy blood sugar, metabolism, and digestion.</p>
-                    
-                    <button onclick="addToCart('berberine')" 
-                            class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl font-semibold text-lg">
-                        Buy Now - $44.99
-                    </button>
-                </div>
-            </div>
+<!-- Supplement Facts -->
+<section class="max-w-2xl mx-auto px-6 py-12">
+<h3 class="text-2xl font-bold text-center mb-8">Berberine 500mg Supplement Facts</h3>
+<img src="/public/images/2.jpg"
+alt="Supplement Facts Panel"
+class="w-full rounded-2xl shadow-lg mx-auto">
+</section>
 
-        </div>
-    </section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-400 py-12 text-sm">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<p>© 2026 Nexara Health • All Rights Reserved</p>
+<p class="mt-6 text-xs">support@nexarahealth.store</p>
+</div>
+</footer>
 
-    <!-- Supplement Facts -->
-    <section class="max-w-2xl mx-auto px-6 py-12">
-        <h3 class="text-2xl font-bold text-center mb-8">Berberine 500mg Supplement Facts</h3>
-        <img src="/images/2.jpg" 
-             alt="Supplement Facts Panel" 
-             class="w-full rounded-2xl shadow-lg mx-auto">
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 text-sm">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p>© 2026 Nexara Health • All Rights Reserved</p>
-            <p class="mt-6 text-xs">support@nexarahealth.store</p>
-        </div>
-    </footer>
-
-    <script>
-        function addToCart(product) {
-            alert(`✅ Added Nexara Health Berberine 500mg to cart!`);
-        }
-    </script>
+<script>
+function addToCart(product) {
+alert(`✅ Added Nexara Health Berberine 500mg to cart!`);
+}
+</script>
 </body>
 </html>
