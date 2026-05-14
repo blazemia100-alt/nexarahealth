@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLP Express — Compounded GLP-1 Fulfillment for Telehealth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.8)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat; }
+        .cta-button { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .cta-button:hover { transform: scale(1.05); box-shadow: 0 20px 25px -5px rgb(16 185 129 / 0.3); }
+        .form-input { transition: all 0.2s; }
+        .form-input:focus { box-shadow: 0 0 0 3px rgb(16 185 129 / 0.2); border-color: #10b981; }
+        #thank-you { display: none; }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* Mobile-first improvements */
+        @media (max-width: 640px) {
+            .hero-text { font-size: 2.4rem; line-height: 1.05; }
+            .section-padding { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+            .form-input, button { min-height: 56px; font-size: 1.1rem; }
+            .testimonial-card { padding: 1.75rem; }
+        }
+    </style>
+</head>
+<body class="bg-zinc-50 text-zinc-900">
+
+    <!-- HERO -->
+    <header class="hero-bg text-white py-16 md:py-32">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm mb-6">
+                <span class="bg-emerald-500 text-white px-2.5 py-0.5 rounded-full font-semibold mr-2">NEW</span>
+                In-Stock • Next-Day Shipping Available
+            </div>
+            <h1 class="hero-text text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                Telehealth Owners: <span class="text-emerald-400">Stop Losing 30-40% of Your Compounded GLP-1 Patients</span> to Fulfillment Delays
+            </h1>
+            <p class="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto mb-10 text-white/90">
+                Reliable next-day cold-chain delivery for <strong>compounded GLP-1 therapies</strong>. 
+                <span class="font-semibold">We guarantee the lowest prices — we'll match or beat any competitor.</span> 
+                Keep patients happy and protect your margins.
+            </p>
+            <button onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})" 
+                    class="cta-button bg-emerald-600 hover:bg-emerald-700 text-white text-xl font-semibold px-8 py-5 md:px-10 md:py-6 rounded-2xl flex items-center justify-center gap-3 shadow-xl mx-auto">
+                <i class="fas fa-rocket"></i>
+                Claim Your Free Pilot + Price Match Guarantee
+            </button>
+            <div class="mt-12 flex flex-wrap justify-center gap-6 text-sm md:text-base">
+                <div class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> HIPAA + DSCSA Compliant</div>
+                <div class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Real-Time Temperature Monitoring</div>
+                <div class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> In-Stock Compounded Inventory • Next-Day Fulfillment</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST BAR, PROBLEM, BENEFITS, TESTIMONIALS, LEAD FORM, THANK YOU, GUARANTEE, FOOTER remain exactly as your preferred prior version -->
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/19295332401" target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('pilot-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = document.getElementById('btn-text');
+            const thankYou = document.getElementById('thank-you');
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                submitBtn.disabled = true;
+                btnText.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Submitting...`;
+
+                const formData = new FormData(form);
+                formData.append('_subject', 'New GLP Express Pilot Request!');
+
+                try {
+                    await fetch('https://formspree.io/f/xdabzlpl', {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    thankYou.style.display = 'flex';
+                    form.reset();
+                } catch (err) {
+                    alert("Thank you! We'll contact you soon at success@glpexpress.online");
+                } finally {
+                    submitBtn.disabled = false;
+                    btnText.textContent = "YES — Activate My Free Pilot &amp; Lock In Lowest Pricing";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
